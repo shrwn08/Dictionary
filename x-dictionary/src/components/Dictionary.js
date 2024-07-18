@@ -17,7 +17,7 @@ const Dictionary = () => {
     }
     console.log('matched',matchedWord)
     if(!matchedWord){
-        setResponse('')
+        setResponse('Word not found in the dictionary')
     }else{
         setResponse(matchedWord.meaning)
         setInput('')
