@@ -5,7 +5,6 @@ const Dictionary = () => {
   const [response, setResponse] = useState("");
 
   const handleSubmitBtn = () => {
-    
     let matchedWord = [];
     if (input === undefined) {
       setResponse("");
@@ -16,7 +15,7 @@ const Dictionary = () => {
     }
     console.log("matched", matchedWord);
     if (!matchedWord) {
-      setResponse("Word not found in the dictionary");
+      setResponse("Word not found in the dictionary.");
     } else {
       setResponse(matchedWord.meaning);
       setInput("");
@@ -27,13 +26,14 @@ const Dictionary = () => {
     <>
       <h1>Dictionary App</h1>
       <input
+        type="text"
         value={input}
-        onChange={(event)=>setInput(event.target.value)}
+        onChange={(event) => setInput(event.target.value)}
         placeholder="Search for a word"
         required
       />
       <button onClick={handleSubmitBtn}>Search</button>
-      <h3>Dictionary: </h3>
+      <h3>Definition: </h3>
       <p>{response}</p>
     </>
   );
